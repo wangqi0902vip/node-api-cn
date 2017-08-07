@@ -6,14 +6,10 @@ added: v8.1.0
 * `callbacks` {Object} the callbacks to register
 * Returns: `{AsyncHook}` instance used for disabling and enabling hooks
 
-Registers functions to be called for different lifetime events of each async
-operation.
+对于每一个异步操作的不同生命周期都会调用注册的回调方法。
 
-The callbacks `init()`/`before()`/`after()`/`destroy()` are called for the
-respective asynchronous event during a resource's lifetime.
+在生命周期中会调用各自异步事件的 `init()`/`before()`/`after()`/`destroy()`回调方法。
 
-All callbacks are optional. So, for example, if only resource cleanup needs to
-be tracked then only the `destroy` callback needs to be passed. The
-specifics of all functions that can be passed to `callbacks` is in the section
-[`Hook Callbacks`][].
+所有的回调方法都是可选的。所以，比如说，如果只有资源清理操作需要跟踪，那么只要传递`destroy`就行了。 
+回调方法的具体细节会在后面的章节[`Hook Callbacks`][]体现.
 
